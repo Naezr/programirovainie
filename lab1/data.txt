@@ -1,0 +1,8 @@
+15 green
+120 red
+97 blue
+23 orange
+100 black
+137 white
+80 violet
+19 magenta
