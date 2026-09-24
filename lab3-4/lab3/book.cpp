@@ -1,0 +1,115 @@
+/*
+ * Преамбула
+ *
+ * Выполнил: Боков Назар Алексеевич
+ * Группа: ПМИ-251
+ *
+ * Данная программа является реализацией
+ * методов описанных в заголовочном файле
+ * класса "Книга" - book.hpp
+ *
+ */
+
+#include <iostream>
+
+#include "book.hpp"
+
+Book::Book() { std::cout << "Book()\n"; }
+Book::Book(const std::string title, const std::string author, const int pages,
+           const double price, const bool isAvailable) {
+  std::cout << "Book(" << title << ", " << author << ", " << pages << ", "
+            << price << ", " << isAvailable << ")\n";
+  setTitle(title);
+  setAuthor(author);
+  setPages(pages);
+  setPrice(price);
+  setAvailable(isAvailable);
+};
+
+Book::Book(const std::string title, const std::string author, const int pages) {
+  std::cout << "Book(" << title << ", " << author << ", " << pages << ")\n";
+  setTitle(title);
+  setAuthor(author);
+  setPages(pages);
+  setPrice(pages * 10); // default: 10 currency per page
+  setAvailable(true);   // default: available
+}
+
+Book::~Book() {
+  std::cout << "~Book()\n";
+  delete title;
+  title = nullptr;
+  delete author;
+  author = nullptr;
+  delete pages;
+  pages = nullptr;
+  delete price;
+  price = nullptr;
+  delete isAvailable;
+  isAvailable = nullptr;
+}
+
+void Book::setTitle(const std::string value) {
+  *this->title = value;
+  std::cout << "setTitle(" << value << ")\n";
+}
+const std::string Book::getTitle() const {
+  std::cout << "getTitle() = " << *title << "\n";
+  return *title;
+}
+
+void Book::setAuthor(const std::string value) {
+  *this->author = value;
+  std::cout << "setAuthor(" << value << ")\n";
+}
+const std::string Book::getAuthor() const {
+  std::cout << "getAuthor() = " << *author << "\n";
+  return *author;
+}
+
+void Book::setPages(const int value) {
+  *this->pages = value;
+  std::cout << "setPages(" << value << ")\n";
+}
+const int Book::getPages() const {
+  std::cout << "getPages() = " << *pages << "\n";
+  return *pages;
+}
+
+void Book::setPrice(const double value) {
+  *this->price = value;
+  std::cout << "setPrice(" << value << ")\n";
+}
+const double Book::getPrice() const {
+  std::cout << "getPrice() = " << *price << "\n";
+  return *price;
+}
+
+void Book::setAvailable(const bool value) {
+  *this->isAvailable = value;
+  std::cout << "setAvailable(" << value << ")\n";
+}
+const bool Book::getAvailable() const {
+  std::cout << "getAvailable() = " << *isAvailable << "\n";
+  return *isAvailable;
+}
+
+void Book::take() {
+  std::cout << "take()\n";
+  if (!getAvailable()) {
+    std::cout << "Book is already taken!\n";
+    return;
+  }
+  setAvailable(false);
+  std::cout << "Book taken successfully!\n";
+}
+
+void Book::giveBack() {
+  std::cout << "giveBack()\n";
+  if (getAvailable()) {
+    std::cout << "Book is not taken!\n";
+    return;
+  }
+  setAvailable(true);
+  std::cout << "Book given back successfully!\n";
+}

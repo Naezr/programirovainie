@@ -1,0 +1,7 @@
+IndentWidth: 2
+UseTab: Never
+PointerAlignment: Left
+ReferenceAlignment: Left
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortBlocksOnASingleLine: Always
+AllowShortLoopsOnASingleLine: true
