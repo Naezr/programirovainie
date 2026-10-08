@@ -1,7 +1,28 @@
 IndentWidth: 2
+ContinuationIndentWidth: 2
+
+AlignEscapedNewlines: DontAlign
+ColumnLimit: 70
+
 UseTab: Never
 PointerAlignment: Left
 ReferenceAlignment: Left
+
 AllowShortIfStatementsOnASingleLine: AllIfsAndElse
 AllowShortBlocksOnASingleLine: Always
 AllowShortLoopsOnASingleLine: true
+AlignAfterOpenBracket: BlockIndent
+AlignOperands: AlignAfterOperator
+
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+  AlignFunctionPointers: true
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
