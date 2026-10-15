@@ -5,8 +5,8 @@ AlignEscapedNewlines: DontAlign
 ColumnLimit: 70
 
 UseTab: Never
-PointerAlignment: Left
-ReferenceAlignment: Left
+PointerAlignment: Right
+ReferenceAlignment: Right
 
 AllowShortIfStatementsOnASingleLine: AllIfsAndElse
 AllowShortBlocksOnASingleLine: Always
