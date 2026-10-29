@@ -1,32 +1,28 @@
 #include <iostream>
 
-#include "book.hpp"
+#include "bookshelf.hpp"
 #include "comics.hpp"
 #include "textbook.hpp"
 
 int main() {
-  int choice = 0;
-  std::cout << "Choose book type.\n"
-               "1 - Comics\n2 - Textbook\n[1-2]: ";
-  std::cin >> choice;
+  Bookshelf shelf;
+  Comics   *comics1 = new Comics(
+    "Tale of Bipki", "Valera Pupkin", 100, 999.99, true, "cool", 12
+  );
+  std::cout << "\n\n";
+  Textbook *textbook1 = new Textbook(
+    "Matematika", "Professor A", 60000, 100, false, "Maths", 10
+  );
+  std::cout << "\n\n";
 
-  Book *book = nullptr;
+  Comics *comics2 = new Comics(
+    "MstitelMenyi", "Morval", 12, 3000, true, "fantastico", 50
+  );
+  std::cout << "\n\n";
+  shelf.push_back(comics1);
+  shelf.push_back(textbook1);
+  shelf.push_back(comics2);
 
-  if (choice == 1) {
-    book = new Comics(
-      "Бетмен и Ко.", "Жан Кок", 100, 5, true, "триллер", 2
-    );
-  } else if (choice == 2) {
-    book = new Textbook(
-      "Как какать", "Акакий Акакиевич", 1002, 5, false, "дефекация",
-      10
-    );
-  } else {
-    std::cout << "Wrong choice.\n";
-    return 1;
-  }
-
-  book->setDefaultPrice();
-
-  delete book;
+  std::cout << shelf.getPrice() << "\n"
+            << shelf.countAvailable() << "\n";
 }

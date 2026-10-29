@@ -5,8 +5,12 @@
 #include <vector>
 
 class Bookshelf {
-  std::vector<Book> books_;
+  std::vector<Book *> books_;
 
 public:
-  void push_back(const Book &book) { books_.push_back(book); }
+  void push_back(Book *book);
+  ~Bookshelf();
+
+  double getPrice() const;
+  int    countAvailable() const;
 };
