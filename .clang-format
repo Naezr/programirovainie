@@ -1,5 +1,6 @@
 IndentWidth: 2
 ContinuationIndentWidth: 2
+ConstructorInitializerIndentWidth: 2
 
 AlignEscapedNewlines: DontAlign
 ColumnLimit: 70
