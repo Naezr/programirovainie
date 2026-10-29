@@ -18,7 +18,10 @@
 
 ## Выполнение
 
-временно отсутствует
+![1](github/lab1.png)
+![2](github/lab2.png)
+![3](github/lab3.png)
+
 
 ## **Домашнее задание**
 
@@ -41,4 +44,5 @@ g++ main.cpp log.cpp book.cpp textbook.cpp comics.cpp bookshelf.cpp -o main
 
 ## Выполнение
 
-временно отсутствует
+![1](github/home1.png)
+![2](github/home2.png)
