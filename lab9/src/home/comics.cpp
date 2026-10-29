@@ -1,15 +1,3 @@
-/*
- * Преамбула
- *
- * Выполнил: Боков Назар Алексеевич
- * Группа: ПМИ-251
- *
- * Данная программа является реализацией
- * методов описанных в заголовочном файле
- * класса "Комикс" - comics.hpp
- *
- */
-
 #include <iostream>
 
 #include "comics.hpp"
@@ -27,17 +15,13 @@ Comics::Comics(
   const double price, const bool isAvailable, const std::string genre,
   const int chapters
 )
-    : Book(title, author, pages, price, isAvailable) {
+  : Book(title, author, pages, price, isAvailable) {
   LOG(title, author, pages, price, isAvailable, genre, chapters);
   setGenre(genre);
   setChapters(chapters);
 }
 
-Comics::~Comics() {
-  LOG();
-  delete genre;
-  delete chapters;
-}
+Comics::~Comics() { LOG(); }
 
 void Comics::initChapters(const int value) {
   LOG(value);
@@ -46,22 +30,22 @@ void Comics::initChapters(const int value) {
               << "\nChapters count must be positive!\n";
     exit(1);
   }
-  *this->chapters = value;
+  this->chapters = value;
 }
 
 void Comics::setDefaultPrice() {
   Book::setDefaultPrice();
   LOG();
-  *this->price += *chapters * 100;
+  this->price += chapters * 100;
 }
 
 void Comics::setGenre(const std::string value) {
   LOG(value);
-  *this->genre = value;
+  this->genre = value;
 }
 const std::string Comics::getGenre() const {
-  LOG(*genre);
-  return *genre;
+  LOG(genre);
+  return genre;
 }
 
 void Comics::setChapters(const int value) {
@@ -69,6 +53,6 @@ void Comics::setChapters(const int value) {
   initChapters(value);
 }
 const int Comics::getChapters() const {
-  LOG(*chapters);
-  return *chapters;
+  LOG(chapters);
+  return chapters;
 }

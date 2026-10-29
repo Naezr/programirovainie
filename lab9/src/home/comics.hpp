@@ -1,25 +1,10 @@
 #pragma once
 
-/*
- * Преамбула
- *
- * Выполнил: Боков Назар Алексеевич
- * Группа: ПМИ-251
- *
- * Данная программа является
- * заголовочным файлом для класса "Комикс"
- * основанного на классе "Книга"
- *
- * genre - жанр комикса
- * chapters - количество глав
- *
- */
-
 #include "book.hpp"
 
 class Comics : public Book {
-  std::string *genre    = new std::string;
-  int         *chapters = new int;
+  std::string genre;
+  int         chapters;
 
   void initChapters(const int value);
 

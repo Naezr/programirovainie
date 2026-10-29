@@ -1,25 +1,14 @@
 #pragma once
 
-/*
- * Преамбула
- *
- * Выполнил: Боков Назар Алексеевич
- * Группа: ПМИ-251
- *
- * Данная программа является
- * заголовочным файлом для класса "Книга"
- *
- */
-
 #include <string>
 
 class Book {
 protected:
-  std::string *title       = new std::string;
-  std::string *author      = new std::string;
-  int         *pages       = new int;
-  double      *price       = new double;
-  bool        *isAvailable = new bool;
+  std::string title;
+  std::string author;
+  int         pages;
+  double      price;
+  bool        isAvailable;
 
   void initPages(const int value);
   void initPrice(const double value);

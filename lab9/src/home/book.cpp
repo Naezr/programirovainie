@@ -1,15 +1,3 @@
-/*
- * Преамбула
- *
- * Выполнил: Боков Назар Алексеевич
- * Группа: ПМИ-251
- *
- * Данная программа является реализацией
- * методов описанных в заголовочном файле
- * класса "Книга" - book.hpp
- *
- */
-
 #include <iostream>
 
 #include "book.hpp"
@@ -48,14 +36,7 @@ Book::Book(
   setAvailable(true);      // default: available
 }
 
-Book::~Book() {
-  LOG();
-  delete title;
-  delete author;
-  delete pages;
-  delete price;
-  delete isAvailable;
-}
+Book::~Book() { LOG(); }
 
 void Book::initPages(const int value) {
   LOG(value);
@@ -64,7 +45,7 @@ void Book::initPages(const int value) {
               << "\nPages count must be positive!\n";
     exit(1);
   }
-  *this->pages = value;
+  this->pages = value;
 }
 
 void Book::initPrice(const double value) {
@@ -74,31 +55,31 @@ void Book::initPrice(const double value) {
               << "\nPrice must be positive!\n";
     exit(1);
   }
-  *this->price = value;
+  this->price = value;
 }
 
 void Book::setDefaultPrice() {
-  double result = *pages * 10;
+  double result = pages * 10;
   LOG(result);
-  *this->price = result;
+  this->price = result;
 }
 
 void Book::setTitle(const std::string value) {
   LOG(value);
-  *this->title = value;
+  this->title = value;
 }
 const std::string Book::getTitle() const {
-  LOG(*title);
-  return *title;
+  LOG(title);
+  return title;
 }
 
 void Book::setAuthor(const std::string value) {
   LOG(value);
-  *this->author = value;
+  this->author = value;
 }
 const std::string Book::getAuthor() const {
-  LOG(*author);
-  return *author;
+  LOG(author);
+  return author;
 }
 
 void Book::setPages(const int value) {
@@ -106,8 +87,8 @@ void Book::setPages(const int value) {
   initPages(value);
 }
 const int Book::getPages() const {
-  LOG(*pages);
-  return *pages;
+  LOG(pages);
+  return pages;
 }
 
 void Book::setPrice(const double value) {
@@ -115,17 +96,17 @@ void Book::setPrice(const double value) {
   initPrice(value);
 }
 const double Book::getPrice() const {
-  LOG(*price);
-  return *price;
+  LOG(price);
+  return price;
 }
 
 void Book::setAvailable(const bool value) {
   LOG(value);
-  *this->isAvailable = value;
+  this->isAvailable = value;
 }
 const bool Book::getAvailable() const {
-  LOG(*isAvailable);
-  return *isAvailable;
+  LOG(isAvailable);
+  return isAvailable;
 }
 
 void Book::take() {
