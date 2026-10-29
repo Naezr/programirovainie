@@ -1,6 +1,6 @@
 #pragma once
 
-#include "figure.hpp"
+#include "../figures/figure.hpp"
 
 class Cylinder {
   Figure *fig_    = nullptr;

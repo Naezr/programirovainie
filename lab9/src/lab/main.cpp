@@ -1,9 +1,12 @@
 #include <iostream>
 
 #include "figures/circle.hpp"
-#include "figures/cylinder.hpp"
 #include "figures/parallelogram.hpp"
 #include "figures/rectangle.hpp"
+
+#include "cylinders/cirCylinder.hpp"
+#include "cylinders/parCylinder.hpp"
+#include "cylinders/rectCylinder.hpp"
 
 int main(int argc, char *argv[]) {
   int choice = 0;
@@ -14,19 +17,13 @@ int main(int argc, char *argv[]) {
                "(1-3): ";
   std::cin >> choice;
 
-  Figure *fig = nullptr;
-
+  std::cout << "volume:\n";
   if (choice == 1) {
-    fig = new Rectangle(10, 15);
+    std::cout << RectCylinder(Rectangle(10, 15), 42).calcVolume();
   } else if (choice == 2) {
-    fig = new Circle(42);
+    std::cout << CirCylinder(Circle(42), 67).calcVolume();
   } else if (choice == 3) {
-    fig = new Parallelogram(12, 55, 23);
+    std::cout
+      << ParCylinder(Parallelogram(12, 55, 23), 43).calcVolume();
   }
-
-  Cylinder *cyl = new Cylinder(*fig, 10);
-
-  std::cout << "volume:\n" << cyl->calcVolume() << "\n";
-
-  delete fig;
 }

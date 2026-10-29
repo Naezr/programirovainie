@@ -21,6 +21,7 @@ double Cylinder::calcVolume() const {
 
 void Cylinder::setFigure(const Figure &fig) {
   LOG();
+  delete fig_;
   fig_ = fig.copy();
 }
 
