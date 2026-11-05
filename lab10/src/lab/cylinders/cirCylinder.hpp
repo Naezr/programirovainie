@@ -4,7 +4,6 @@
 #include "cylinder.hpp"
 
 class CirCylinder : public Cylinder {
-  Circle *fig_ = nullptr;
 
 public:
   CirCylinder(const Circle &fig, const double height);

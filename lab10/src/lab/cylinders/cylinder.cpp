@@ -23,6 +23,8 @@ void Cylinder::setFigure(const Figure &fig) {
 
 Figure *Cylinder::getFigure() const { return fig_->copy(); }
 
+Cylinder::~Cylinder() { delete fig_; }
+
 // Height
 
 void Cylinder::initHeight_(const double height) {

@@ -4,7 +4,6 @@
 #include "cylinder.hpp"
 
 class ParCylinder : public Cylinder {
-  Parallelogram *fig_ = nullptr;
 
 public:
   ParCylinder(const Parallelogram &fig, const double height);

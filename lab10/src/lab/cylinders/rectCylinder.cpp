@@ -1,5 +1,7 @@
 #include "rectCylinder.hpp"
 
+#include <iostream>
+
 RectCylinder::RectCylinder(const Rectangle &fig, const double height)
   : Cylinder(fig, height) {}
 
@@ -17,8 +19,9 @@ Rectangle *RectCylinder::getFigure() const {
 }
 
 void RectCylinder::setRectWidth(const double width) {
-  fig_->setWidth(width);
+  std::cout << "dasdasda\n";
+  dynamic_cast<Rectangle *>(fig_)->setWidth(width);
 }
 void RectCylinder::setRectHeight(const double height) {
-  fig_->setHeight(height);
+  dynamic_cast<Rectangle *>(fig_)->setHeight(height);
 }

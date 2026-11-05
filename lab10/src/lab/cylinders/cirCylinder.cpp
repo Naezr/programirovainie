@@ -17,5 +17,5 @@ Circle *CirCylinder::getFigure() const {
 }
 
 void CirCylinder::setCircleRadius(const double radius) {
-  fig_->setRadius(radius);
+  dynamic_cast<Circle *>(fig_)->setRadius(radius);
 }

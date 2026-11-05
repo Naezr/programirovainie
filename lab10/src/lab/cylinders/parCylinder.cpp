@@ -19,11 +19,11 @@ Parallelogram *ParCylinder::getFigure() const {
 }
 
 void ParCylinder::setParSide1(const double side1) {
-  fig_->setSide1(side1);
+  dynamic_cast<Parallelogram *>(fig_)->setSide1(side1);
 }
 void ParCylinder::setParSide2(const double side2) {
-  fig_->setSide2(side2);
+  dynamic_cast<Parallelogram *>(fig_)->setSide2(side2);
 }
 void ParCylinder::setParAngle(const double angle) {
-  fig_->setAngle(angle);
+  dynamic_cast<Parallelogram *>(fig_)->setAngle(angle);
 }

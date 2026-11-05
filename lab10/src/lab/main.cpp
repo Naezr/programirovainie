@@ -19,7 +19,8 @@ int main(int argc, char *argv[]) {
 
   std::cout << "volume:\n";
   if (choice == 1) {
-    RectCylinder *rcyl = RectCylinder::create(Rectangle(10, 15), 42);
+    Rectangle     rect(10, 15);
+    RectCylinder *rcyl = RectCylinder::create(rect, 42);
 
     std::cout << "Initial data:\n - rect width: "
               << rcyl->getFigure()->getWidth() << "\n - rect height: "
@@ -33,6 +34,8 @@ int main(int argc, char *argv[]) {
     rcyl->setRectHeight(height);
 
     std::cout << "New volume: " << rcyl->calcVolume() << "\n";
+
+    delete rcyl;
 
   } else if (choice == 2) {
     std::cout << CirCylinder(Circle(42), 67).calcVolume();
