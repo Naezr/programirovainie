@@ -19,9 +19,24 @@ int main(int argc, char *argv[]) {
 
   std::cout << "volume:\n";
   if (choice == 1) {
-    std::cout << RectCylinder(Rectangle(10, 15), 42).calcVolume();
+    RectCylinder *rcyl = RectCylinder::create(Rectangle(10, 15), 42);
+
+    std::cout << "Initial data:\n - rect width: "
+              << rcyl->getFigure()->getWidth() << "\n - rect height: "
+              << rcyl->getFigure()->getHeight()
+              << "\n - volume: " << rcyl->calcVolume()
+              << "\nEnter new width and height for rectangle:\n";
+
+    double width, height;
+    std::cin >> width >> height;
+    rcyl->setRectWidth(width);
+    rcyl->setRectHeight(height);
+
+    std::cout << "New volume: " << rcyl->calcVolume() << "\n";
+
   } else if (choice == 2) {
     std::cout << CirCylinder(Circle(42), 67).calcVolume();
+
   } else if (choice == 3) {
     std::cout
       << ParCylinder(Parallelogram(12, 55, 23), 43).calcVolume();
