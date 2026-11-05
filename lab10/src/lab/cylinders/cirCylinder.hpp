@@ -9,7 +9,7 @@ class CirCylinder : public Cylinder {
 public:
   CirCylinder(const Circle &fig, const double height);
 
-  static CirCylinder *create(Circle fig, double height);
+  static CirCylinder *create(const Circle &fig, const double height);
 
   void    setFigure(const Circle &fig);
   Circle *getFigure() const;

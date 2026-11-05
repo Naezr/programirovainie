@@ -3,7 +3,8 @@
 RectCylinder::RectCylinder(const Rectangle &fig, const double height)
   : Cylinder(fig, height) {}
 
-static RectCylinder *create(Rectangle fig, double height) {
+RectCylinder *
+RectCylinder::create(const Rectangle &fig, const double height) {
   return new RectCylinder(fig, height);
 }
 

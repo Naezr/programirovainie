@@ -5,7 +5,8 @@ ParCylinder::ParCylinder(
 )
   : Cylinder(fig, height) {}
 
-ParCylinder *ParCylinder::create(Parallelogram fig, double height) {
+ParCylinder *
+ParCylinder::create(const Parallelogram &fig, const double height) {
   return new ParCylinder(fig, height);
 }
 

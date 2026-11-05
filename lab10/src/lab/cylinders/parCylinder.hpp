@@ -9,7 +9,8 @@ class ParCylinder : public Cylinder {
 public:
   ParCylinder(const Parallelogram &fig, const double height);
 
-  static ParCylinder *create(Parallelogram fig, double height);
+  static ParCylinder *
+  create(const Parallelogram &fig, const double height);
 
   void           setFigure(const Parallelogram &fig);
   Parallelogram *getFigure() const;

@@ -9,7 +9,8 @@ class RectCylinder : public Cylinder {
 public:
   RectCylinder(const Rectangle &fig, const double height);
 
-  static RectCylinder *create(Rectangle fig, double height);
+  static RectCylinder *
+  create(const Rectangle &fig, const double height);
 
   void       setFigure(const Rectangle &fig);
   Rectangle *getFigure() const;

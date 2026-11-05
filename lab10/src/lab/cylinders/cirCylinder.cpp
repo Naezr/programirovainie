@@ -3,7 +3,8 @@
 CirCylinder::CirCylinder(const Circle &fig, const double height)
   : Cylinder(fig, height) {}
 
-CirCylinder *CirCylinder::create(Circle fig, double height) {
+CirCylinder *
+CirCylinder::create(const Circle &fig, const double height) {
   return new CirCylinder(fig, height);
 }
 
