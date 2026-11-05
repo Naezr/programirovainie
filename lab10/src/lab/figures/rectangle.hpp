@@ -3,8 +3,8 @@
 #include "figure.hpp"
 
 class Rectangle : public Figure {
-  double *width_  = new double;
-  double *height_ = new double;
+  double width_;
+  double height_;
 
 protected:
   void initWidth_(const double width);
@@ -12,7 +12,6 @@ protected:
 
 public:
   Rectangle();
-  ~Rectangle() override;
 
   Rectangle(const double width, const double height);
 

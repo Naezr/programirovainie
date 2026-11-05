@@ -3,9 +3,9 @@
 #include "figure.hpp"
 
 class Parallelogram : public Figure {
-  double *side1_ = new double;
-  double *side2_ = new double;
-  double *angle_ = new double;
+  double side1_;
+  double side2_;
+  double angle_;
 
 protected:
   void initSide1_(const double side1);
@@ -14,7 +14,6 @@ protected:
 
 public:
   Parallelogram();
-  ~Parallelogram() override;
 
   Parallelogram(
     const double side1, const double side2, const double angle

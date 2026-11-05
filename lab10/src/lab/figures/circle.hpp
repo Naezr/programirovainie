@@ -3,14 +3,13 @@
 #include "figure.hpp"
 
 class Circle : public Figure {
-  double *radius_ = new double;
+  double radius_;
 
 protected:
   void initRadius_(const double radius);
 
 public:
   Circle();
-  ~Circle() override;
 
   Circle(const double radius);
 
