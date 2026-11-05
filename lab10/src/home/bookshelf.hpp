@@ -2,6 +2,7 @@
 
 #include "books/book.hpp"
 
+#include <initializer_list>
 #include <vector>
 
 class Bookshelf {
@@ -9,7 +10,12 @@ class Bookshelf {
 
 public:
   void push_back(Book *book);
+
+  Bookshelf() = default;
+  Bookshelf(std::initializer_list<Book *>);
   ~Bookshelf();
+
+  static Bookshelf *create(std::initializer_list<Book *>);
 
   void setBookTitle(const int index, const std::string title);
   void setBookAuthor(const int index, const std::string author);

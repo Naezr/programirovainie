@@ -5,8 +5,8 @@
 #include "bookshelf.hpp"
 
 int main() {
-  Bookshelf shelf;
-  Comics   *comics1 = new Comics(
+
+  Comics *comics1 = new Comics(
     "Tale of Bipki", "Valera Pupkin", 100, 999.99, true, "cool", 12
   );
 
@@ -18,10 +18,10 @@ int main() {
     "MstitelMenyi", "Morval", 12, 3000, true, "fantastico", 50
   );
 
-  shelf.push_back(comics1);
-  shelf.push_back(textbook1);
-  shelf.push_back(comics2);
+  Bookshelf *shelf = Bookshelf::create({textbook1, comics1, comics2});
 
-  std::cout << shelf.getPrice() << "\n"
-            << shelf.countAvailable() << "\n";
+  shelf->setComicsChapters(1, 12);
+
+  std::cout << shelf->getPrice() << "\n"
+            << shelf->countAvailable() << "\n";
 }

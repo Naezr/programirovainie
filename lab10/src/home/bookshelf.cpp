@@ -2,10 +2,20 @@
 #include "books/comics.hpp"
 #include "books/textbook.hpp"
 
+#include <stdexcept>
+
 void Bookshelf::push_back(Book *book) { books_.push_back(book); }
+
+Bookshelf::Bookshelf(std::initializer_list<Book *> list) {
+  for (auto b : list) books_.push_back(b);
+}
 
 Bookshelf::~Bookshelf() {
   for (Book *book : books_) delete book;
+}
+
+Bookshelf *Bookshelf::create(std::initializer_list<Book *> list) {
+  return new Bookshelf(list);
 }
 
 double Bookshelf::getPrice() const {
@@ -48,23 +58,31 @@ void Bookshelf::setBookAvailable(
 void Bookshelf::setTextbookSubject(
   const int index, const std::string subject
 ) {
-  dynamic_cast<Textbook *>(books_[index])->setSubject(subject);
+  if (Textbook *tbook = dynamic_cast<Textbook *>(books_[index]))
+    tbook->setSubject(subject);
+  else throw new std::runtime_error("invalid book type");
 }
 
 void Bookshelf::setTextbookDifficulty(
   const int index, const int difficulty
 ) {
-  dynamic_cast<Textbook *>(books_[index])->setDifficulty(difficulty);
+  if (Textbook *tbook = dynamic_cast<Textbook *>(books_[index]))
+    tbook->setDifficulty(difficulty);
+  else throw new std::runtime_error("invalid book type");
 }
 
 void Bookshelf::setComicsGenre(
   const int index, const std::string genre
 ) {
-  dynamic_cast<Comics *>(books_[index])->setGenre(genre);
+  if (Comics *comics = dynamic_cast<Comics *>(books_[index]))
+    comics->setGenre(genre);
+  else throw new std::runtime_error("invalid book type");
 }
 
 void Bookshelf::setComicsChapters(
   const int index, const int chapters
 ) {
-  dynamic_cast<Comics *>(books_[index])->setChapters(chapters);
+  if (Comics *comics = dynamic_cast<Comics *>(books_[index]))
+    comics->setChapters(chapters);
+  else throw new std::runtime_error("invalid book type");
 }
