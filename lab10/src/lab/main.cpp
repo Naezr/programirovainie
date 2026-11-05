@@ -37,10 +37,36 @@ int main(int argc, char *argv[]) {
     delete rcyl;
 
   } else if (choice == 2) {
-    std::cout << CirCylinder(Circle(42), 67).calcVolume();
+    CirCylinder *ccyl = CirCylinder::create(Circle(42), 67);
+
+    std::cout << "Initial data:\n - circle radius: "
+              << ccyl->getFigure()->getRadius()
+              << "\n - volume: " << ccyl->calcVolume()
+              << "\nEnter new radius for circle:\n";
+
+    double radius;
+    std::cin >> radius;
+
+    std::cout << "New volume: " << ccyl->calcVolume() << "\n";
+
+    delete ccyl;
 
   } else if (choice == 3) {
+    ParCylinder *pcyl =
+      ParCylinder::create(Parallelogram(12, 55, 23), 43);
+
     std::cout
-      << ParCylinder(Parallelogram(12, 55, 23), 43).calcVolume();
+      << "Initial data:\n - side1 len: "
+      << pcyl->getFigure()->getSide1()
+      << "\n - side2 len: " << pcyl->getFigure()->getSide2()
+      << "\n - volume: " << pcyl->calcVolume()
+      << "\nEnter new side1, side2 and angle for parallelogram:\n";
+
+    double side1, side2, angle;
+    std::cin >> side1 >> side2 >> angle;
+
+    std::cout << "New volume: " << pcyl->calcVolume() << "\n";
+
+    delete pcyl;
   }
 }
