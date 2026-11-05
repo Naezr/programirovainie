@@ -9,6 +9,10 @@ ParCylinder::ParCylinder(
   LOG();
 }
 
+ParCylinder *ParCylinder::create(Parallelogram fig, double height) {
+  return new ParCylinder(fig, height);
+}
+
 void ParCylinder::setFigure(const Parallelogram &fig) {
   LOG();
   Cylinder::setFigure(fig);
@@ -16,4 +20,14 @@ void ParCylinder::setFigure(const Parallelogram &fig) {
 
 Parallelogram *ParCylinder::getFigure() const {
   return dynamic_cast<Parallelogram *>(Cylinder::getFigure());
+}
+
+void ParCylinder::setParSide1(const double side1) {
+  fig_->setSide1(side1);
+}
+void ParCylinder::setParSide2(const double side2) {
+  fig_->setSide2(side2);
+}
+void ParCylinder::setParAngle(const double angle) {
+  fig_->setAngle(angle);
 }

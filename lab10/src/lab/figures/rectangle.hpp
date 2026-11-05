@@ -21,7 +21,7 @@ public:
   void   setWidth(const double width);
   double getWidth() const;
 
-  void   setHeight(const double width);
+  void   setHeight(const double height);
   double getHeight() const;
 
   double calcArea() const override;
