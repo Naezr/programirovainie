@@ -5,12 +5,12 @@
 // Base
 
 Cylinder::Cylinder(const Figure &fig, const double height) {
-  fig_     = fig.copy();
-  *height_ = height;
+  fig_    = fig.copy();
+  height_ = height;
 }
 
 double Cylinder::calcVolume() const {
-  double result = fig_->calcArea() * *height_;
+  double result = fig_->calcArea() * height_;
   return result;
 }
 
@@ -28,9 +28,9 @@ Figure *Cylinder::getFigure() const { return fig_->copy(); }
 void Cylinder::initHeight_(const double height) {
   if (height < 0)
     throw std::invalid_argument("Height should be positive!");
-  *height_ = height;
+  height_ = height;
 }
 
 void Cylinder::setHeight(const double height) { initHeight_(height); }
 
-double Cylinder::getHeight() const { return *height_; }
+double Cylinder::getHeight() const { return height_; }

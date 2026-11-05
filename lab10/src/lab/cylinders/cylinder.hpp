@@ -3,8 +3,8 @@
 #include "../figures/figure.hpp"
 
 class Cylinder {
-  Figure *fig_    = nullptr;
-  double *height_ = new double;
+  Figure *fig_ = nullptr;
+  double  height_;
 
 protected:
   void initHeight_(const double height);
