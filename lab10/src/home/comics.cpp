@@ -2,8 +2,6 @@
 
 #include "comics.hpp"
 
-#include "log.hpp"
-
 Comics::Comics() : Book() {
   std::cout << "Comics()\n";
   setGenre("");
@@ -16,15 +14,14 @@ Comics::Comics(
   const int chapters
 )
   : Book(title, author, pages, price, isAvailable) {
-  LOG(title, author, pages, price, isAvailable, genre, chapters);
+
   setGenre(genre);
   setChapters(chapters);
 }
 
-Comics::~Comics() { LOG(); }
+Comics::~Comics() {}
 
 void Comics::initChapters(const int value) {
-  LOG(value);
   if (value < 0) {
     std::cout << "Invalid chapters count: " << value
               << "\nChapters count must be positive!\n";
@@ -35,24 +32,14 @@ void Comics::initChapters(const int value) {
 
 void Comics::setDefaultPrice() {
   Book::setDefaultPrice();
-  LOG();
   this->price += chapters * 100;
 }
 
 void Comics::setGenre(const std::string value) {
-  LOG(value);
+
   this->genre = value;
 }
-const std::string Comics::getGenre() const {
-  LOG(genre);
-  return genre;
-}
+const std::string Comics::getGenre() const { return genre; }
 
-void Comics::setChapters(const int value) {
-  LOG(value);
-  initChapters(value);
-}
-const int Comics::getChapters() const {
-  LOG(chapters);
-  return chapters;
-}
+void Comics::setChapters(const int value) { initChapters(value); }
+const int Comics::getChapters() const { return chapters; }

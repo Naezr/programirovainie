@@ -1,18 +1,13 @@
 #include "rectCylinder.hpp"
 
-#include "../log.hpp"
-
 RectCylinder::RectCylinder(const Rectangle &fig, const double height)
-  : Cylinder(fig, height) {
-  LOG();
-}
+  : Cylinder(fig, height) {}
 
 static RectCylinder *create(Rectangle fig, double height) {
   return new RectCylinder(fig, height);
 }
 
 void RectCylinder::setFigure(const Rectangle &fig) {
-  LOG();
   Cylinder::setFigure(fig);
 }
 

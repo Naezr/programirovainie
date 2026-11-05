@@ -1,20 +1,15 @@
 #include "parCylinder.hpp"
 
-#include "../log.hpp"
-
 ParCylinder::ParCylinder(
   const Parallelogram &fig, const double height
 )
-  : Cylinder(fig, height) {
-  LOG();
-}
+  : Cylinder(fig, height) {}
 
 ParCylinder *ParCylinder::create(Parallelogram fig, double height) {
   return new ParCylinder(fig, height);
 }
 
 void ParCylinder::setFigure(const Parallelogram &fig) {
-  LOG();
   Cylinder::setFigure(fig);
 }
 

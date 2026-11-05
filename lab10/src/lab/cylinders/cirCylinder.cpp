@@ -1,18 +1,13 @@
 #include "cirCylinder.hpp"
 
-#include "../log.hpp"
-
 CirCylinder::CirCylinder(const Circle &fig, const double height)
-  : Cylinder(fig, height) {
-  LOG();
-}
+  : Cylinder(fig, height) {}
 
 CirCylinder *CirCylinder::create(Circle fig, double height) {
   return new CirCylinder(fig, height);
 }
 
 void CirCylinder::setFigure(const Circle &fig) {
-  LOG();
   Cylinder::setFigure(fig);
 }
 
