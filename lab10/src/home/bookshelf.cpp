@@ -18,6 +18,8 @@ Bookshelf *Bookshelf::create(std::initializer_list<Book *> list) {
   return new Bookshelf(list);
 }
 
+Book *Bookshelf::getBook(const int index) { return books_[index]; }
+
 double Bookshelf::getPrice() const {
   double sum = 0;
   for (Book *b : books_) sum += b->getPrice();

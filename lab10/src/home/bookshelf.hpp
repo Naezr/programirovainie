@@ -17,6 +17,8 @@ public:
 
   static Bookshelf *create(std::initializer_list<Book *>);
 
+  Book *getBook(const int index);
+
   void setBookTitle(const int index, const std::string title);
   void setBookAuthor(const int index, const std::string author);
   void setBookPages(const int index, const int pages);
