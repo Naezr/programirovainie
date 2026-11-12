@@ -1,6 +1,6 @@
 #include "rectangle.hpp"
 
-#include <stdexcept>
+#include "../notPositiveException.hpp"
 
 // Base
 
@@ -25,7 +25,7 @@ Rectangle *Rectangle::copy() const { return new Rectangle(*this); }
 
 void Rectangle::initWidth_(const double width) {
   if (width < 0)
-    throw std::invalid_argument("Width should be positive!");
+    throw new notPositiveException("Width should be positive!");
   width_ = width;
 }
 
@@ -37,7 +37,7 @@ double Rectangle::getWidth() const { return width_; }
 
 void Rectangle::initHeight_(const double height) {
   if (height < 0)
-    throw std::invalid_argument("Height should be positive!");
+    throw new notPositiveException("Height should be positive!");
   height_ = height;
 }
 

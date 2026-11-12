@@ -4,6 +4,8 @@
 #include <numbers>
 #include <stdexcept>
 
+#include "../notPositiveException.hpp"
+
 // Base
 Parallelogram::Parallelogram() {
   initSide1_(0);
@@ -33,7 +35,7 @@ Parallelogram *Parallelogram::copy() const {
 
 void Parallelogram::initSide1_(const double side1) {
   if (side1 < 0)
-    throw std::invalid_argument("Side1 should be positive!");
+    throw new notPositiveException("Side1 should be positive!");
   side1_ = side1;
 }
 
@@ -47,7 +49,7 @@ double Parallelogram::getSide1() const { return side1_; }
 
 void Parallelogram::initSide2_(const double side2) {
   if (side2 < 0)
-    throw std::invalid_argument("Side2 should be positive!");
+    throw new notPositiveException("Side2 should be positive!");
   side2_ = side2;
 }
 

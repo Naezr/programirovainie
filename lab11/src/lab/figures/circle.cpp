@@ -1,7 +1,8 @@
 #include "circle.hpp"
 
 #include <numbers>
-#include <stdexcept>
+
+#include "../notPositiveException.hpp"
 
 // Base
 
@@ -21,7 +22,7 @@ Circle *Circle::copy() const { return new Circle(*this); }
 
 void Circle::initRadius_(const double radius) {
   if (radius < 0)
-    throw std::invalid_argument("Radius should be positive!");
+    throw new notPositiveException("Radius should be positive!");
   radius_ = radius;
 }
 
