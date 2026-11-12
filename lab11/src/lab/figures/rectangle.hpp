@@ -1,0 +1,27 @@
+#pragma once
+
+#include "figure.hpp"
+
+class Rectangle : public Figure {
+  double width_;
+  double height_;
+
+protected:
+  void initWidth_(const double width);
+  void initHeight_(const double height);
+
+public:
+  Rectangle();
+
+  Rectangle(const double width, const double height);
+
+  Rectangle *copy() const override;
+
+  void   setWidth(const double width);
+  double getWidth() const;
+
+  void   setHeight(const double height);
+  double getHeight() const;
+
+  double calcArea() const override;
+};

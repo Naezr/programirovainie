@@ -1,0 +1,34 @@
+#pragma once
+
+#include "figure.hpp"
+
+class Parallelogram : public Figure {
+  double side1_;
+  double side2_;
+  double angle_;
+
+protected:
+  void initSide1_(const double side1);
+  void initSide2_(const double side2);
+  void initAngle_(const double angle);
+
+public:
+  Parallelogram();
+
+  Parallelogram(
+    const double side1, const double side2, const double angle
+  );
+
+  Parallelogram *copy() const override;
+
+  void   setSide1(const double side1);
+  double getSide1() const;
+
+  void   setSide2(const double side2);
+  double getSide2() const;
+
+  void   setAngle(const double angle);
+  double getAngle() const;
+
+  double calcArea() const override;
+};
