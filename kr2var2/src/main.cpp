@@ -26,7 +26,18 @@ int main() {
     return 1;
   }
 
-  book->setDefaultPrice();
+  Comics *comics = new Comics(
+    "Приключения Петьки", "Виталя", 100, 500, true, "драма", 10
+  );
+
+  Textbook *textbook = new Textbook(
+    "Программирование для чайников", "Чайник", 3, 10000, false,
+    "Программирование", 1
+  );
+
+  std::cout << "Total Books created: " << Book::getObjCount() << "\n";
 
   delete book;
+  delete comics;
+  delete textbook;
 }

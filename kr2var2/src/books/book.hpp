@@ -13,7 +13,11 @@ protected:
   void initPages(const int value);
   void initPrice(const double value);
 
+  static int objCount;
+
 public:
+  static int getObjCount();
+
   Book();
   Book(
     const std::string title, const std::string author,

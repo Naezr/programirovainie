@@ -2,7 +2,12 @@
 
 #include "book.hpp"
 
+int Book::objCount = 0;
+int Book::getObjCount() { return objCount; }
+
 Book::Book() {
+  objCount++;
+
   setTitle("");
   setAuthor("");
   setPages(0);
@@ -14,6 +19,8 @@ Book::Book(
   const std::string title, const std::string author, const int pages,
   const double price, const bool isAvailable
 ) {
+  objCount++;
+
   setTitle(title);
   setAuthor(author);
   setPages(pages);
@@ -24,6 +31,8 @@ Book::Book(
 Book::Book(
   const std::string title, const std::string author, const int pages
 ) {
+  objCount++;
+
   setTitle(title);
   setAuthor(author);
   setPages(pages);
