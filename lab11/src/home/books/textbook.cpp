@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 #include "textbook.hpp"
 
@@ -22,11 +23,11 @@ Textbook::Textbook(
 Textbook::~Textbook() {};
 
 void Textbook::initDifficulty(const int value) {
-  if (value < 0 || value > 10) {
-    std::cout << "Invalid difficulty: " << value
-              << "\nDifficulty must be in range 1-10!\n";
-    exit(1);
-  }
+  if (value < 0 || value > 10)
+    throw new std::invalid_argument(
+      "Difficulty must be in range 1-10!"
+    );
+
   this->difficulty = value;
 }
 

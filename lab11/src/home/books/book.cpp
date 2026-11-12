@@ -1,6 +1,9 @@
 #include <iostream>
+#include <stdexcept>
 
 #include "book.hpp"
+
+#include "../notPositiveException.hpp"
 
 Book::Book() {
   setTitle("");
@@ -35,21 +38,17 @@ Book::~Book() {}
 
 void Book::initPages(const int value) {
 
-  if (value < 0) {
-    std::cout << "Invalid pages count: " << value
-              << "\nPages count must be positive!\n";
-    exit(1);
-  }
+  if (value < 0)
+    throw new notPositiveException("Pages count must be positive!");
+
   this->pages = value;
 }
 
 void Book::initPrice(const double value) {
 
-  if (value < 0) {
-    std::cout << "Invalid price: " << value
-              << "\nPrice must be positive!\n";
-    exit(1);
-  }
+  if (value < 0)
+    throw new notPositiveException("Price must be positive!");
+
   this->price = value;
 }
 
@@ -82,19 +81,17 @@ const bool Book::getAvailable() const { return isAvailable; }
 
 void Book::take() {
 
-  if (!getAvailable()) {
-    std::cout << "Book is already taken!\n";
-    return;
-  }
+  if (!getAvailable())
+    throw new std::runtime_error("Book is already taken!");
+
   setAvailable(false);
   std::cout << "Book taken successfully!\n";
 }
 
 void Book::giveBack() {
-  if (getAvailable()) {
-    std::cout << "Book is not taken!\n";
-    return;
-  }
+  if (getAvailable())
+    throw new std::runtime_error("Book is not taken!");
+
   setAvailable(true);
   std::cout << "Book given back successfully!\n";
 }

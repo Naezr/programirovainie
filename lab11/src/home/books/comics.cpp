@@ -2,6 +2,8 @@
 
 #include "comics.hpp"
 
+#include "../notPositiveException.hpp"
+
 Comics::Comics() : Book() {
   std::cout << "Comics()\n";
   setGenre("");
@@ -22,11 +24,11 @@ Comics::Comics(
 Comics::~Comics() {}
 
 void Comics::initChapters(const int value) {
-  if (value < 0) {
-    std::cout << "Invalid chapters count: " << value
-              << "\nChapters count must be positive!\n";
-    exit(1);
-  }
+  if (value < 0)
+    throw new notPositiveException(
+      "Chapters count must be positive!"
+    );
+
   this->chapters = value;
 }
 
