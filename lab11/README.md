@@ -19,7 +19,7 @@ make runlab
 
 ## Выполнение
 
---
+![1](github/lab1.png)
 
 ## **Домашнее задание**
 
@@ -32,14 +32,8 @@ make runlab
 
 `exit(1)` заменён на исключения, используются три типа: свой `NotPositiveException`, `std::invalid_argument` и `std::runtime_error`
 
-
-
 ## Компиляция и запуск
 
 ```bash
 make runhome
 ```
-
-## Выполнение
-
---
