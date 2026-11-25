@@ -10,10 +10,14 @@ PointerAlignment: Right
 ReferenceAlignment: Right
 
 AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortCaseExpressionOnASingleLine: true
 AllowShortBlocksOnASingleLine: Always
 AllowShortLoopsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+
 AlignAfterOpenBracket: BlockIndent
 AlignOperands: AlignAfterOperator
+AlignTrailingComments: true
 
 AlignConsecutiveDeclarations:
   Enabled: true
@@ -21,6 +25,7 @@ AlignConsecutiveDeclarations:
   AcrossComments: false
   AlignCompound: true
   AlignFunctionPointers: true
+  AlignFunctionDeclarations: true
 
 AlignConsecutiveAssignments:
   Enabled: true
