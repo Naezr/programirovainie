@@ -37,7 +37,14 @@ int main() {
        << "z + z2 = " << z + z2 << endl
        << "z2 - z = " << z2 - z << endl
        << "z * z2 = " << z * z2 << endl
-       << "z * zero = " << z * zero << endl
+       << "z * zero = " << z * zero
+       << endl
+
+       // ++z ; z++
+       << "[z++] before: " << z << "; in: " << z++ << "; after: " << z
+       << endl
+       << "[++z] before: " << z << "; in: " << ++z << "; after: " << z
+       << endl
 
        << "\ninput: a b => a+bi\n"
        << "z3 = ";

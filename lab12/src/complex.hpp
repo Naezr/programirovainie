@@ -22,14 +22,20 @@ public:
   std::string str() const;
   void        show() const;
 
+  Complex &operator=(const Complex &);
+
   bool operator==(const Complex &) const;
   bool operator!=(const Complex &) const;
+
+  bool operator>(const Complex &) const;
+  bool operator<(const Complex &) const;
 
   Complex operator+(const Complex &) const;
   Complex operator-(const Complex &) const;
   Complex operator*(const Complex &) const;
 
-  Complex &operator=(const Complex &);
+  Complex &operator++();
+  Complex  operator++(int);
 
   friend std::istream &operator>>(std::istream &, Complex &);
   friend std::ostream &operator<<(std::ostream &, const Complex &);

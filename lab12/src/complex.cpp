@@ -49,6 +49,17 @@ Complex Complex::operator*(const Complex &o) const {
   );
 }
 
+Complex &Complex::operator++() {
+  ++re_;
+  return *this;
+}
+
+Complex Complex::operator++(int) {
+  Complex old(*this);
+  ++(*this);
+  return old;
+}
+
 Complex &Complex::operator=(const Complex &o) {
   if (*this != o) {
     re_ = o.re_;
