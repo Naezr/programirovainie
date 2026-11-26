@@ -8,6 +8,7 @@ private:
 
 public:
   Complex();
+  Complex(const Complex &);
   Complex(const double, const double);
 
   ~Complex() = default;
@@ -18,15 +19,18 @@ public:
   void re(const double);
   void im(const double);
 
-  void str();
-  void show();
+  std::string str() const;
+  void        show() const;
 
   bool operator==(const Complex &) const;
   bool operator!=(const Complex &) const;
 
-  Complex  operator+(const Complex &) const;
+  Complex operator+(const Complex &) const;
+  Complex operator-(const Complex &) const;
+  Complex operator*(const Complex &) const;
+
   Complex &operator=(const Complex &);
 
-  friend std::istream &operator<<(std::istream &, Complex &);
-  friend std::ostream &operator<<(std::ostream &, Complex &);
+  friend std::istream &operator>>(std::istream &, Complex &);
+  friend std::ostream &operator<<(std::ostream &, const Complex &);
 };

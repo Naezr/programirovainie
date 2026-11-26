@@ -1,7 +1,12 @@
-.PHONY: runlab
+.PHONY: runlab clean
+
+ARGS = -Wall -Wextra
 
 bin/lab: $(wildcard src/*.cpp)
-	g++ $^ -o $@
+	g++ $(ARGS) $^ -o $@
 
 runlab: bin/lab
 	./$<
+
+clean:
+	rm bin/lab
