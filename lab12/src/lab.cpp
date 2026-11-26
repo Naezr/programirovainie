@@ -25,19 +25,23 @@ int main() {
 
        << endl
 
-       // << ; == ; !=
+       // << ; == ; != ; < ' >
        << z << " == " << z2 << " " << ntos(z == z2) << endl
        << z3 << " != " << z2 << " " << ntos(z3 != z2) << endl
+       << endl
+       << z << " < " << z2 << " " << ntos(z < z2) << endl
+       << z << " > " << z2 << " " << ntos(z > z2) << endl
 
        << endl
 
        // + ; - ; *
        << "z = " << z << "; z2 = " << z2 << "; z3 = " << z3
        << "; zero = " << zero << endl
+       << endl
        << "z + z2 = " << z + z2 << endl
        << "z2 - z = " << z2 - z << endl
        << "z * z2 = " << z * z2 << endl
-       << "z * zero = " << z * zero
+       << "z * zero = " << z * zero << endl
        << endl
 
        // ++z ; z++

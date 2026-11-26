@@ -35,6 +35,12 @@ bool Complex::operator!=(const Complex &o) const {
   return !(*this == o);
 }
 
+bool Complex::operator<(const Complex &o) const {
+  return re_ * re_ + im_ * im_ < o.re_ * o.re_ + o.im_ * o.im_;
+}
+
+bool Complex::operator>(const Complex &o) const { return o < *this; }
+
 Complex Complex::operator+(const Complex &o) const {
   return Complex(re_ + o.re_, im_ + o.im_);
 }
