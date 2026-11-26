@@ -2,6 +2,8 @@
 
 ARGS = -Wall -Wextra
 
+all: bin/lab
+
 bin/lab: $(wildcard src/*.cpp)
 	g++ $(ARGS) $^ -o $@
 
